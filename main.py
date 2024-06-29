@@ -94,7 +94,6 @@ def lambda_handler(event, context):
         model="whisper-1",
         file=audio_file,
     )
-
     # Return transcription.
     return {
         "statusCode": 200,
@@ -105,11 +104,11 @@ def lambda_handler(event, context):
     }
 
 
-# # Uncomment the following to test locally.
-# if __name__ == "__main__":
-#     event = {
-#         "url": "https://www.youtube.com/watch?v=ySLViEgeFkM"
-#     }  # Define any event data if needed
-#     context = {}  # Define any context data if needed
-#     result = lambda_handler(event, context)
-#     print(json.dumps(result, indent=2))
+# Uncomment the following to test locally.
+if __name__ == "__main__":
+    event = {
+        "url": "https://www.youtube.com/watch?v=ySLViEgeFkM"
+    }  # Define any event data if needed
+    context = {}  # Define any context data if needed
+    result = lambda_handler(event, context)
+    print(json.dumps(result, indent=2))
